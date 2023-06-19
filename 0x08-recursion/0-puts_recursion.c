@@ -1,6 +1,7 @@
 /*
- * File: 0-puts_recursion.c
- * Auth: sam
+* files recursion in c
+@s: character to be printed
+
  */
 
 #include "main.h"

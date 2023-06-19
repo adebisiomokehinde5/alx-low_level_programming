@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * prime2 - Makes it possible to evaluate from 1 to n
+ * prime2 - evaluation from 1 to n
  * @a: the same number as n
  * @b: the number that iterates from 1 to n
  * Return: On success 1.
