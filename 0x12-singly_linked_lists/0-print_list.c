@@ -1,55 +1,27 @@
-#include "main.h"
+#include "lists.h"
 /**
- *_strlen_recursion - returns lenght of a string.
- *@s: pointer to string.
- *
- *Return: lenght of string.
- */
-int _strlen_recursion(char *s)
-{
-	if (*s)
-	{
-		return (1 + _strlen_recursion(s + 1));
-	}
-	return (0);
-}
-
-/**
-  *helperFunction - check if palindrome.
-  *@s: pointer to string.
-  *@fi: first index.
-  *@li: lastIndex.
+  *print_list - prints all the elements of a list_t.
+  *@h: pointer to list.
   *
-  *Return: 0 if not palindrome, 1 if palindrome.
+  *Return: the number of nodes.
   */
-int helperFunction(char *s, int fi, int li)
+size_t print_list(const list_t *h)
 {
-	if (fi < li && s[fi] == s[li])
+	int count;
+
+	count = 0;
+	while (h != NULL)
 	{
-		return (helperFunction(s, fi + 1, li - 1));
+		if (h->str == NULL)
+		{
+			printf("[0] (nil)\n");
+			h = h->next;
+			count++;
+		}
+		printf("[%d] %s\n", h->len, h->str);
+		h = h->next;
+		count++;
 	}
-	if (s[fi] != s[li])
-	{
-		return (0);
-	}
-	return (1);
-}
 
-/**
-  *is_palindrome - checks if string is palindrome or not.
-  *@s: pointer to string.
-  *
-  *Return: 1 if string is palindrome 0 if not.
-  */
-int is_palindrome(char *s)
-{
-	int fi, li;
-
-	fi = 0;
-	li = _strlen_recursion(s) - 1;
-
-	if (!*s)
-		return (1);
-
-	return (helperFunction(s, fi, li));
+	return (count);
 }
