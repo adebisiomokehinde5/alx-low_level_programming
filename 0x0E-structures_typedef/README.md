@@ -1,2 +1,2 @@
 0x0E. C-Structures, typedef
-/* dhfhhhf */
+CONTINUATION OF C PROGRAMMING
